@@ -1,9 +1,9 @@
 # HobbyCollection
 Github page for HobbyCollection. A website to record all your favorite collections!
 1. Introduction
-    * 
+    * This github repo is dedicated to the HobbyCollection website project where you can catalogue your favorite collections. Search, filter, and collect!
 2. Storyboard (screen mockups): Invision, FluidUI, Powerpoint, paint, etc... will be fine.
-3. Functional Requirements in the format (fill in the square brackets with your own words):
+3. Functional Requirements:
     * As a User
     * I want to be able to save an image.
     * So that I can save it on a website
@@ -29,7 +29,7 @@ Github page for HobbyCollection. A website to record all your favorite collectio
 5. JSON Schema
     * Your project should have an REST endpoint that emits JSON, which another group can consume.  The design document should contain a draft JSON schema for this endpoint.
     * You can create a schema from a Java class at QuickType.io.  This Java class is typically a DTO.  That's all you need at this point.
-6. Scrum Roles, and who will fill those roles
+6. Roles:
     * UI Specialist: Ben Romig
     * Business Logic and Persistence Specialist: Steve Meckstroth
     * Product Owner/Scrum Master/DevOps: Gabriel Levit
