@@ -1,18 +1,28 @@
 # HobbyCollection
 Github page for HobbyCollection. A website to record all your favorite collections!
 1. Introduction
+    * 
 2. Storyboard (screen mockups): Invision, FluidUI, Powerpoint, paint, etc... will be fine.
 3. Functional Requirements in the format (fill in the square brackets with your own words):
-    * As a [User]
-    * I want [Feature]
-    * So that I can [Do something]
+    * As a User
+    * I want to be able to save an image.
+    * So that I can save it on a website
+    * As a User
+    * I want to add descriptions and tags to the images
+    * So that I can search and filter the images.
+    * As a User
+    * I want to have a homepage where I can look at my whole collection.
+    * So that I can save it on a website
     * Elaborate each of these with several examples in this format:
-      * Given [Prerequisite]
-      * When [Series of Steps]
-      * Then [Expected Result]
-    * Notes:
-      * You should have a few (2-4) requirements.
-      * The Given/When/Then syntax will form the basis of our unit tests. Consider different cases: good data, bad data, multiple sets of data, etc.
+      * Given an image
+      * When uploaded, saved.
+      * Then you can view the image on the website
+      * Given a tag
+      * When applied to an image information
+      * Then you can see the tag in the image information.
+      * Given a homepage
+      * When I click on the homepage
+      * Then I should see images of my collection.
 4. Class Diagram
     * UML-based class diagram.
     * Class Diagram Description: One or two lines for each class to describe use of interfaces,  classes and resources, interfaces, etc. Don't worry about putting more than a        few words to each class; this does not need to be thorough.
@@ -20,18 +30,9 @@ Github page for HobbyCollection. A website to record all your favorite collectio
     * Your project should have an REST endpoint that emits JSON, which another group can consume.  The design document should contain a draft JSON schema for this endpoint.
     * You can create a schema from a Java class at QuickType.io.  This Java class is typically a DTO.  That's all you need at this point.
 6. Scrum Roles, and who will fill those roles
-7. github.com project link
-8. A scrum or kanban board, using GitHub projects or something similar, that contains:
-    * A milestone for Milestone #1, with tasks associated.
-    * Projects for Milestone #1.
-    * Tasked stores for Projects for Milestone #1.
-      * Sprint tasks that elaborate on the stories, with technical details.
-      * These should be technical tasks that are required to implement one of the features.
-      * You only need to task out stories for Sprint #1.  You can task out stories for Sprint #2 and #3 as we get closer to those sprints.
-        * The Product Owner/Scrum Master/DevOps person on your team should select stories to play for each sprint, from the list of available stories in the Product Backlog.
-      * As long as you have the tasks in GitHub Projects, under Projects, and associated with milestones, you do not need to repeat them in the design doc.  I'll look at  the         Project and Milestone view to see them.
-      * Milestones for Milestone #2 and #3.  
-        * You do not need projects or tasks for these later milestones. You can define those in planning meetings, as we get closer.
-9) Link to Teams for your 8:00 Sunday group stand up. 
-    * If you choose a different tool and/or different time, that's fine, just indicate it in the document.
-    * If your repo is public, and  you prefer not to put the Teams link there, no problem... just email it to me and your group members.  However, you should still list the         date and time of your weekly meeting(s).
+    * UI Specialist: Ben Romig
+    * Business Logic and Persistence Specialist: Steve Meckstroth
+    * Product Owner/Scrum Master/DevOps: Gabriel Levit
+    * Requirements Analyst: Allie Prusha
+
+9) Meets at Wednesday 5:00pm weekly.
