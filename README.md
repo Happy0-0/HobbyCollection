@@ -27,43 +27,7 @@ Github page for HobbyCollection. A website to record all your favorite collectio
 4. Class Diagram
     * ![class diagram](https://mailuc-my.sharepoint.com/personal/meckstss_mail_uc_edu/Documents/Microsoft%20Teams%20Chat%20Files/HobbyCollection.png)
 5. JSON Schema
-    >> Java Source Code
-      package item;
-
-      public class Pin{
-         public int id;
-         public String name;
-         public String description;
-         public float value;
-
-         public void setName(String name){}
-         public String getName(){return name;}
-
-
-         public void setDescription(String description){}
-         public String getDescription(){return description;}
-
-
-         public void setValue(float value){}
-         public float getValue(){return value;}
-      }
-
-      >>JSON Schema
-
-      {
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "type" : "string"
-          },
-          "description" : {
-            "type" : "string"
-          },
-          "value" : {
-            "type" : "number"
-          }
-        }
-      }
+    * ![JSON Schema](https://drive.google.com/file/d/1ZAMkzdPMSGG-demNKAHHnENhR4onr51-/view?usp=sharing)
 6. Roles:
     * UI Specialist: Ben Romig
     * Business Logic and Persistence Specialist: Steve Meckstroth
