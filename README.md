@@ -2,7 +2,8 @@
 Github page for HobbyCollection. A website to record all your favorite collections!
 1. Introduction
     * This github repo is dedicated to the HobbyCollection website project where you can catalogue your favorite collections. Search, filter, and collect!
-2. Storyboard (screen mockups): Invision, FluidUI, Powerpoint, paint, etc... will be fine.
+2. Storyboard (screen mockups):
+    * https://projects.invisionapp.com/prototype/Hobby-Collection-Storyboard-ckku5cs7x0019c701fepjokvn
 3. Functional Requirements:
     * As a User
     * I want to be able to save an image.
@@ -24,15 +25,49 @@ Github page for HobbyCollection. A website to record all your favorite collectio
       * When I click on the homepage
       * Then I should see images of my collection.
 4. Class Diagram
-    * UML-based class diagram.
-    * Class Diagram Description: One or two lines for each class to describe use of interfaces,  classes and resources, interfaces, etc. Don't worry about putting more than a        few words to each class; this does not need to be thorough.
+    * ![class diagram](https://mailuc-my.sharepoint.com/personal/meckstss_mail_uc_edu/Documents/Microsoft%20Teams%20Chat%20Files/HobbyCollection.png)
 5. JSON Schema
-    * Your project should have an REST endpoint that emits JSON, which another group can consume.  The design document should contain a draft JSON schema for this endpoint.
-    * You can create a schema from a Java class at QuickType.io.  This Java class is typically a DTO.  That's all you need at this point.
+    >> Java Source Code
+      package item;
+
+      public class Pin{
+         public int id;
+         public String name;
+         public String description;
+         public float value;
+
+         public void setName(String name){}
+         public String getName(){return name;}
+
+
+         public void setDescription(String description){}
+         public String getDescription(){return description;}
+
+
+         public void setValue(float value){}
+         public float getValue(){return value;}
+      }
+
+      >>JSON Schema
+
+      {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "value" : {
+            "type" : "number"
+          }
+        }
+      }
 6. Roles:
     * UI Specialist: Ben Romig
     * Business Logic and Persistence Specialist: Steve Meckstroth
     * Product Owner/Scrum Master/DevOps: Gabriel Levit
     * Requirements Analyst: Allie Prusha
 
-9) Meets at Wednesday 5:00pm weekly.
+7) Meets at Wednesday 5:00pm weekly.
