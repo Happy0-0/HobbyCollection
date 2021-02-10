@@ -25,9 +25,9 @@ Github page for HobbyCollection. A website to record all your favorite collectio
       * When I click on the homepage
       * Then I should see images of my collection.
 4. Class Diagram
-    * https://mailuc-my.sharepoint.com/personal/meckstss_mail_uc_edu/Documents/Microsoft%20Teams%20Chat%20Files/HobbyCollection.png
+    * ![Class Diagram](/Images/HobbyCollection.png)
 5. JSON Schema
-    * https://drive.google.com/file/d/1ZAMkzdPMSGG-demNKAHHnENhR4onr51-/view?usp=sharing
+    * ![JSON Schema](/Images/JSONSchema.png)
 6. Roles:
     * UI Specialist: Ben Romig
     * Business Logic and Persistence Specialist: Steve Meckstroth
