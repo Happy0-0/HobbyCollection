@@ -8,9 +8,29 @@ Github page for HobbyCollection. A website to record all your favorite collectio
     * As a User
     * I want to be able to save an image.
     * So that I can save it on a website
+    * Elaborate each of these with several examples in this format:
+      * Given an image
+      * When uploaded, saved.
+      * Then you can view the image on the website
+      * Given a tag
+      * When applied to an image information
+      * Then you can see the tag in the image information.
+      * Given a homepage
+      * When I click on the homepage
+      * Then I should see images of my collection.
     * As a User
     * I want to add descriptions and tags to the images
     * So that I can search and filter the images.
+    * Elaborate each of these with several examples in this format:
+      * Given an image
+      * When uploaded, saved.
+      * Then you can view the image on the website
+      * Given a tag
+      * When applied to an image information
+      * Then you can see the tag in the image information.
+      * Given a homepage
+      * When I click on the homepage
+      * Then I should see images of my collection.
     * As a User
     * I want to have a homepage where I can look at my whole collection.
     * So that I can save it on a website
