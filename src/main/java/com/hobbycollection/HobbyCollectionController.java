@@ -5,8 +5,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HobbyCollectionController {
+    /**
+     * Handle the / endpoint
+     * @return start
+     */
     @RequestMapping("/")
     public String index() {
-        return "Hobby Collection home page.";
+
+        return "start";
     }
 }
