@@ -1,16 +1,35 @@
 package com.hobbycollection.dao;
 
 
-import com.hobbycollection.dto.CollectionDTO;
+import com.hobbycollection.dto.Collection;
 
-public class CollectionDAO {
-    public boolean save(CollectionDTO collection){
-        //TODO: implement CollectionDTO persistence
-        return true;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class CollectionDAO implements ICollectionDAO{
+
+    Map<Integer, Collection> allCollections = new HashMap<>();
+
+    @Override
+    public ArrayList<Collection> fetchAll() {
+        return new ArrayList<>(allCollections.values());
     }
 
-    public CollectionDTO getItemByID(int ID){
-        //TODO: Implement CollectionDAO getItemByID
-        return null;
+    @Override
+    public Collection getItemByID(int id) {
+        return allCollections.get(id);
+    }
+
+    @Override
+    public Collection save(Collection collection) throws Exception {
+        Integer collectionID = collection.getID();
+        allCollections.put(collectionID, collection);
+        return collection;
+    }
+
+    @Override
+    public void delete(int id) {
+        allCollections.remove(id);
     }
 }
