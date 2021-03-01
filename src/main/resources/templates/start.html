@@ -5,32 +5,54 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
+    <link rel="icon" href="/images/icon.png">
     <title>Hobby Collection</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div th:replace="fragments/topnav :: navbar">
+    <div th:replace="fragments/reusable-components :: navbar"></div>
+    <p style="padding-bottom:1%"></p>
 
+    <div class="container">
+        <h2>Add or View Collections</h2>
+        <div class="row row-cols-auto">
+            <div class="col">
+                <div th:replace="fragments/reusable-components :: addcollectioncard">
+                </div>
+            </div>
+            <div class="col">
+                <div th:replace="fragments/reusable-components :: viewcollectioncard">
+                </div>
+            </div>
+
+        </div>
     </div>
+    <p style="padding-bottom:1%"></p>
 
-    <nav class="navbar navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand">Hobby Collection</a>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+    <div style="background-color:#0082C4">
+    <div class="container" style="background-color:#0082C4">
+        <h2>Browse Collection 1</h2>
+        <div class="row row-cols-auto">
+            <div class="col">
+                <div th:replace="fragments/reusable-components :: itemcard">
+                </div>
+            </div>
+            <div class="col">
+                <div th:replace="fragments/reusable-components :: itemcard">
+                </div>
+            </div>
+            <div class="col">
+                <div th:replace="fragments/reusable-components :: itemcard">
+                </div>
+            </div>
+            <div class="col">
+                <div th:replace="fragments/reusable-components :: itemcard">
+                </div>
+            </div>
         </div>
-    </nav>
-
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body text-dark">
-            <h5 class="card-title">Collection title</h5>
-            <p class="card-text">Sample text for the collection description</p>
-            <a href="#" class="btn btn-primary">View Collection</a>
-        </div>
+        <p style="padding:1%"></p>
+    </div>
     </div>
 </body>
 </html>

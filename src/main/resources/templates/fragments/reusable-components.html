@@ -1,0 +1,44 @@
+<div th:fragment="navbar">
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand">Hobby Collection</a>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+
+<div th:fragment="viewcollectioncard">
+    <div class="card" style="width: 18rem;border-style: solid;border-width: medium;border-color: grey;">
+        <img src="templates/images/sidebar-placeholder-blank.png" class="card-img-top" alt="placeholder image">
+        <div class="card-body text-dark">
+            <h5 class="card-title">Collection title</h5>
+            <p class="card-text">Sample text for the collection description</p>
+            <a href="#" class="btn btn-primary">View Collection</a>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="addcollectioncard">
+    <div class="card" style="width: 18rem;border-style: solid;border-width: medium;border-color: grey;">
+        <img src="/images/sidebar-placeholder-blank.png" class="card-img-top" alt="placeholder image">
+        <div class="card-body text-dark">
+            <h5 class="card-title">Start Here</h5>
+            <p class="card-text">Click below to add a new collection</p>
+            <a href="#" class="btn btn-primary">Add Collection</a>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="itemcard">
+    <div class="card" style="width: 18rem;border-style: solid;border-width: medium;border-color: grey;">
+        <img class="card-img-top" src="/images/sidebar-placeholder-blank.png" alt="placeholder image">
+        <div class="card-body text-dark">
+            <h5 class="card-title">Item title</h5>
+            <p class="card-text">Sample text for the item description</p>
+            <a href="#" class="btn btn-primary">Edit Item</a>
+        </div>
+    </div>
+</div>
