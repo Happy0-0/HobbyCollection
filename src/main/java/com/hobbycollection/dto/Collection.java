@@ -12,4 +12,8 @@ public class Collection {
     private String imageURL;
     private String description;
     private int ID;
+
+    public Collection() {
+
+    }
 }
