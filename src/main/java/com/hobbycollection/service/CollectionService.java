@@ -1,5 +1,6 @@
 package com.hobbycollection.service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class CollectionService implements ICollectionService{
@@ -11,6 +12,11 @@ public class CollectionService implements ICollectionService{
     @Override
     public Collection save(Collection collection) throws Exception {
         return collection;
+    }
+
+    @Override
+    public ArrayList<Collection> fetchAll() {
+        return null;
     }
 
     @Override
