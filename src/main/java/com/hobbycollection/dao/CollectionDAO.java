@@ -23,7 +23,7 @@ public class CollectionDAO implements ICollectionDAO{
 
     @Override
     public Collection save(Collection collection) throws Exception {
-        Integer collectionID = collection.getID();
+        int collectionID = collection.getID();
         allCollections.put(collectionID, collection);
         return collection;
     }
