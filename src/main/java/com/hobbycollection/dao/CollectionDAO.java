@@ -13,11 +13,13 @@ public class CollectionDAO implements ICollectionDAO{
 
     @Override
     public ArrayList<Collection> fetchAll() {
+
         return new ArrayList<>(allCollections.values());
     }
 
     @Override
     public Collection getItemByID(int id) {
+
         return allCollections.get(id);
     }
 
@@ -30,6 +32,7 @@ public class CollectionDAO implements ICollectionDAO{
 
     @Override
     public void delete(int id) {
+
         allCollections.remove(id);
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HobbyCollectionApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(HobbyCollectionApplication.class, args);
     }
 

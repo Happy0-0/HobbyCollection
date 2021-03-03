@@ -12,6 +12,7 @@ public class CollectionItemDAO implements ICollectionItemDAO{
 
     @Override
     public ArrayList<CollectionItem> fetchAll() {
+
         return new ArrayList<>(allCollectionItems.values());
     }
 

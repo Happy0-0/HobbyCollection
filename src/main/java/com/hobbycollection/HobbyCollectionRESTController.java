@@ -10,6 +10,7 @@ public class HobbyCollectionRESTController {
 
     @GetMapping("/api/Collection/fetchByid")
     public Collection collectionFetchById(@RequestParam(value="id") int id){
-        return new Collection("Test", "http://something","Test Description",1 );
+        return new Collection("Test", "http://something",
+                "Test Description",1 );
     }
 }
