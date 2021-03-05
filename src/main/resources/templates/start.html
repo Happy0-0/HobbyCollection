@@ -22,7 +22,7 @@
                     <div class="card-body text-dark">
                         <h5 class="card-title">Start Here</h5>
                         <p class="card-text">Click below to add a new collection</p>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Add Collection</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCollectionModal">Add Collection</button>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
     </div>
     </div>
     <!-- Add Collection Card Modal Section -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="addCollectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -81,8 +81,8 @@
                             <input type="text" class="form-control" id="formCollectionDescription" placeholder="Enter a Description">
                         </div>
                         <div class="custom-file">
+                            <label class="custom-file-label" for="customFile">Choose a Picture</label><br>
                             <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Choose a Picture</label>
                         </div>
                         </form>
                     </div>
