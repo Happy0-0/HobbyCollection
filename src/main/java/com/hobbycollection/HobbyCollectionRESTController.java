@@ -11,6 +11,11 @@ public class HobbyCollectionRESTController {
     @Autowired
     private ICollectionService collectionService;
 
+    /**
+     *
+     * @param id
+     * @return URL
+     */
     @GetMapping("/api/Collection/fetchByid")
     public Collection collectionFetchById(@RequestParam(value="id") int id){
         return new Collection("test name", "http://some.url","test description");
