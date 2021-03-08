@@ -9,6 +9,8 @@ import java.util.Map;
 
 public class CollectionDAO implements ICollectionDAO{
 
+    //This is how the endpoints interact with the data.
+
     Map<Integer, Collection> allCollections = new HashMap<>();
 
     @Override
