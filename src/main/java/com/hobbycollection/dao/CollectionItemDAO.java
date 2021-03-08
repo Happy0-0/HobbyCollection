@@ -1,6 +1,5 @@
 package com.hobbycollection.dao;
 
-import com.hobbycollection.dto.Collection;
 import com.hobbycollection.dto.CollectionItem;
 
 import java.util.ArrayList;
