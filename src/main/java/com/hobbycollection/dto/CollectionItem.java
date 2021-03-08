@@ -12,9 +12,13 @@ public class CollectionItem {
     private String tags;
     private String imageURL;
     private String description;
-    private int ID;
+    private int itemID;
 
     public CollectionItem() {
-
+        /*
+        Is this intended to remain empty?
+        SonarLint flags this as an empty implementation and recommends filling with nested comments with explanation, an exception
+        or suggests completing the implementation.
+        */
     }
 }
