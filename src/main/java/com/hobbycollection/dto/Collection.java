@@ -11,7 +11,7 @@ public class Collection {
     private String name;
     private String imageURL;
     private String description;
-    private int collectionID;
+    private int ID;
 
     public Collection() {
         /*

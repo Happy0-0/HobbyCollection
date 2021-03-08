@@ -12,7 +12,7 @@ public class CollectionItem {
     private String tags;
     private String imageURL;
     private String description;
-    private int itemID;
+    private int ID;
 
     public CollectionItem() {
         /*
