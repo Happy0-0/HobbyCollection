@@ -9,5 +9,5 @@ public interface ICollectionDAO {
     ArrayList<Collection> fetchAll();
     Collection getItemByID(int id);
     Collection save(Collection collection) throws Exception;
-    void delete(int id);
+    void delete(int id) throws Exception;
 }

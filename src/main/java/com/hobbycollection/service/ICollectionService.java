@@ -38,12 +38,4 @@ public interface ICollectionService {
      */
     List<Collection> fetchAll();
 
-    /**
-     * Retrieves all of the items for a given collection
-     * @param collectionId int of the unique id for a collection
-     * @return List<CollectionItem>
-     * @throws IOException If an error occurs
-     */
-    List<CollectionItem> fetchItems(int collectionId) throws IOException;
-
 }
