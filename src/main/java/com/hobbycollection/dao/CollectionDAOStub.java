@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CollectionDAO implements ICollectionDAO{
+public class CollectionDAOStub implements ICollectionDAO{
 
     Map<Integer, Collection> allCollections = new HashMap<>();
 
