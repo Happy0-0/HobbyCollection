@@ -2,7 +2,7 @@
 <div th:fragment="navbar">
     <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand">Hobby Collection</a>
+            <a class="navbar-brand" href="/">Hobby Collection</a>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-success" type="submit">Search</button>
@@ -22,23 +22,13 @@
     </div>
 </div>
 
-<div th:fragment="addcollectioncard">
-    <div class="card" style="width: 18rem;border-style: solid;border-width: medium;border-color: grey;">
-        <div class="card-body text-dark">
-            <h5 class="card-title">Start Here</h5>
-            <p class="card-text">Click below to add a new collection</p>
-            <a th:href="@{addEditCollection}" class="btn btn-primary">Add Collection</a>
-        </div>
-    </div>
-</div>
-
 <div th:fragment="itemcard">
     <div class="card" style="width: 18rem;border-style: solid;border-width: medium;border-color: grey;">
         <img class="card-img-top" src="https://s3.drafthouse.com/ui/sidebar-placeholder-blank.png" alt="placeholder image">
         <div class="card-body text-dark">
             <h5 class="card-title">Item title</h5>
             <p class="card-text">Sample text for the item description</p>
-            <a href="#" class="btn btn-primary">Edit Item</a>
+            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editItemModal">Edit Item</a>
         </div>
     </div>
 </div>
