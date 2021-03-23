@@ -15,23 +15,24 @@
     <div th:replace="fragments/reusable-components :: navbar"></div>
 
     <div class="container main-div">
-        <h2>Add or View Collections</h2>
         <div class="row row-cols-auto">
-            <div class="col">
-                <div th:replace="fragments/reusable-components :: addcollectioncard">
-                </div>
-            </div>
+            <h2>Collections</h2>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCollectionModal">Add Collection</button>
+        </div>
+        <div class="row row-cols-auto">
             <div class="col">
                 <div th:replace="fragments/reusable-components :: viewcollectioncard">
                 </div>
             </div>
-
         </div>
     </div>
 
     <div class="collection-div">
         <div class="container collection-div2">
-            <h2>Browse Collection</h2>
+            <div class="row row-cols-auto">
+                <h2>Browse Collection</h2>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addItemModal">Add Item</button>
+            </div>
                 <div class="row row-cols-auto">
                 <div class="col">
                     <div th:replace="fragments/reusable-components :: itemcard">

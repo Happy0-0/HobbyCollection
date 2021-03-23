@@ -13,13 +13,4 @@ public class HobbyCollectionController {
     public String index() {
         return "start";
     }
-
-    /**
-     * Handle the AddEditCollection endpoint
-     * @return AddEditCollection
-     */
-    @RequestMapping("/addEditCollection")
-    public String addEditCollection() {
-        return "AddEditCollection";
-    }
 }
