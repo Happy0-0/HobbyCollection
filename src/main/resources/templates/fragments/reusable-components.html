@@ -1,10 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="navbar">
     <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand">Hobby Collection</a>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-success" type="submit">Search</button>
             </form>
         </div>
     </nav>
@@ -26,7 +27,7 @@
         <div class="card-body text-dark">
             <h5 class="card-title">Start Here</h5>
             <p class="card-text">Click below to add a new collection</p>
-            <a href="#" class="btn btn-primary">Add Collection</a>
+            <a th:href="@{addEditCollection}" class="btn btn-primary">Add Collection</a>
         </div>
     </div>
 </div>
@@ -41,3 +42,4 @@
         </div>
     </div>
 </div>
+</html>
