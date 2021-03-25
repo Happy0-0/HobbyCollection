@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HobbyCollectionRESTController {
 
     /**
-     *
+     * Fetches a collection by the id
      * @param id
      * @return URL
      */

@@ -12,8 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Navigation Bar-->
     <div th:replace="fragments/reusable-components :: navbar"></div>
-
+    <!-- Collection Section-->
     <div class="container main-div">
         <div class="row row-cols-auto">
             <h2>Collections</h2>
@@ -26,9 +27,9 @@
             </div>
         </div>
     </div>
-
+    <!-- Items of a selected collection section-->
     <div class="collection-div">
-        <div class="container collection-div2">
+        <div class="container item-div">
             <div class="row row-cols-auto">
                 <h2>Browse Collection</h2>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addItemModal">Add Item</button>
