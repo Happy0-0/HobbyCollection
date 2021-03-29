@@ -4,7 +4,10 @@ import com.hobbycollection.dao.ICollectionDAO;
 import com.hobbycollection.dao.ICollectionItemDAO;
 import com.hobbycollection.dto.Collection;
 import com.hobbycollection.dto.CollectionItem;
+import com.hobbycollection.service.ICollectionService;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
@@ -12,6 +15,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class HobbyCollectionApplicationTests {
+
+    @Autowired
+    private ICollectionService collectionService;
+    private Collection collection = new Collection();
+    private CollectionItem collectionItem = new CollectionItem();
+
     @MockBean
     private ICollectionDAO collectionDAO;
     private ICollectionItemDAO collectionItemDAO;

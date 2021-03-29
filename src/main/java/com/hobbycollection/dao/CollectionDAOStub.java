@@ -2,11 +2,13 @@ package com.hobbycollection.dao;
 
 
 import com.hobbycollection.dto.Collection;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+@Repository("collectionDAO")
 public class CollectionDAOStub implements ICollectionDAO{
 
     Map<Integer, Collection> allCollections = new HashMap<>();
