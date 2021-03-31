@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CollectionDAO implements ICollectionDAO{
+public class CollectionDAOStub implements ICollectionDAO{
 
     Map<Integer, Collection> allCollections = new HashMap<>();
 
@@ -23,13 +23,21 @@ public class CollectionDAO implements ICollectionDAO{
 
     @Override
     public Collection save(Collection collection) throws Exception {
-        Integer collectionID = collection.getID();
-        allCollections.put(collectionID, collection);
-        return collection;
+        try {
+            Integer collectionID = collection.getID();
+            allCollections.put(collectionID, collection);
+            return collection;
+        } catch (Exception e){
+            throw new Exception("Error while saving a collection");
+        }
     }
 
     @Override
-    public void delete(int id) {
-        allCollections.remove(id);
+    public void delete(int id) throws Exception {
+        try {
+            allCollections.remove(id);
+        } catch(Exception e){
+            throw new Exception("Error while deleting a collection");
+        }
     }
 }

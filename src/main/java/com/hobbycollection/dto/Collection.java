@@ -1,19 +1,29 @@
 package com.hobbycollection.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
-@AllArgsConstructor
-public class Collection {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public @Data
+class Collection {
     private String name;
     private String imageURL;
     private String description;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
 
     public Collection() {
 
+    }
+
+    public Collection(String name, String imageURL, String description){
+        this.name = name;
+        this.imageURL = imageURL;
+        this.description = description;
     }
 }
