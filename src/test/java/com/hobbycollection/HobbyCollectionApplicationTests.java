@@ -25,6 +25,9 @@ class HobbyCollectionApplicationTests {
     private ICollectionDAO collectionDAO;
     private ICollectionItemDAO collectionItemDAO;
 
+    /**
+     * Validate that the application runs successfully
+     */
     @Test
     void contextLoads() {
     }
