@@ -2,7 +2,6 @@ package com.hobbycollection.dao;
 
 import com.hobbycollection.dto.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

@@ -1,6 +1,5 @@
 package com.hobbycollection;
 
-import com.hobbycollection.dao.CollectionSQLDAO;
 import com.hobbycollection.dto.Collection;
 import com.hobbycollection.service.ICollectionService;
 import org.springframework.beans.factory.annotation.Autowired;
