@@ -38,4 +38,9 @@ public interface ICollectionService {
      */
     List<Collection> fetchAll();
 
+    /**
+     * Retrieves collections by a search term
+     * @return List<Collection>
+     */
+    Collection fetchCollectionByName(String searchCollectionTerm);
 }

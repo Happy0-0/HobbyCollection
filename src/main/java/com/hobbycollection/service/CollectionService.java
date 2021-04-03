@@ -47,4 +47,8 @@ public class CollectionService implements ICollectionService{
     public List<Collection> fetchAll() {
         return collectionDAO.fetchAll();
     }
+
+    @Override
+    @Cacheable(value="collection", key="name")
+    public Collection fetchCollectionByName(String name) { return collectionDAO.fetchCollectionByName(name); }
 }

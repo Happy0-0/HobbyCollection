@@ -18,6 +18,9 @@ public class CollectionSQLDAO implements ICollectionDAO{
     }
 
     @Override
+    public Collection fetchCollectionByName(String name) {return null;}
+
+    @Override
     public Collection getItemByID(int id) {
         return null;
     }

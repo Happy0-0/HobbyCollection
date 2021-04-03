@@ -23,6 +23,9 @@
         <div class="row row-cols-auto">
             <div class="col">
                 <div th:replace="fragments/reusable-components :: viewcollectioncard">
+                    <div class="list-group" th:each="collection : ${collections}">
+
+                    </div>
                 </div>
             </div>
         </div>
