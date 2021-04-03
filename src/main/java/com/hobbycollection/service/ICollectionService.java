@@ -1,10 +1,8 @@
 package com.hobbycollection.service;
 
 import com.hobbycollection.dto.Collection;
-import com.hobbycollection.dto.CollectionItem;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface ICollectionService {
@@ -42,5 +40,5 @@ public interface ICollectionService {
      * Retrieves collections by a search term
      * @return List<Collection>
      */
-    Collection fetchCollectionByName(String searchCollectionTerm);
+    ArrayList<Collection> fetchCollectionByName(String searchCollectionTerm);
 }

@@ -17,7 +17,7 @@ public class CollectionDAOStub implements ICollectionDAO{
     }
 
     @Override
-    public Collection fetchCollectionByName(String name) { return allCollections.get(name); }
+    public ArrayList<Collection> fetchCollectionByName(String name) { return new ArrayList<>(); }
 
     @Override
     public Collection getItemByID(int id) {

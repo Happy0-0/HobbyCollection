@@ -2,13 +2,12 @@ package com.hobbycollection.service;
 
 import com.hobbycollection.dao.ICollectionDAO;
 import com.hobbycollection.dto.Collection;
-import com.hobbycollection.dto.CollectionItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -50,5 +49,5 @@ public class CollectionService implements ICollectionService{
 
     @Override
     @Cacheable(value="collection", key="name")
-    public Collection fetchCollectionByName(String name) { return collectionDAO.fetchCollectionByName(name); }
+    public ArrayList<Collection> fetchCollectionByName(String name) { return collectionDAO.fetchCollectionByName(name); }
 }
