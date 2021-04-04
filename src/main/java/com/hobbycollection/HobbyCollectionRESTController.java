@@ -3,6 +3,7 @@ package com.hobbycollection;
 import com.hobbycollection.dto.Collection;
 import com.hobbycollection.service.ICollectionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,6 +17,7 @@ public class HobbyCollectionRESTController {
      * @return URL
      */
     @GetMapping("/api/Collection/fetchByid")
+    @Cacheable(value="collection", key="#id")
     public Collection collectionFetchById(@RequestParam(value="id") int id){
         return new Collection("test name", "http://some.url","test description");
     }
