@@ -21,7 +21,7 @@ public class CollectionItemDAO implements ICollectionItemDAO{
 
     @Override
     public CollectionItem save(CollectionItem collectionItem) throws Exception {
-        Integer collectionItemId = collectionItem.getID();
+        int collectionItemId = collectionItem.getID();
         allCollectionItems.put(collectionItemId, collectionItem);
         return collectionItem;
     }
