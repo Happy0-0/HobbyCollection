@@ -7,18 +7,24 @@
     <meta charset="UTF-8">
     <link rel="icon" href="https://www.shareicon.net/data/2017/01/18/872963_game_512x512.png">
     <title>Hobby Collection</title>
-    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet">
+    <link href="/src/main/resources/static/css/style.css" type="text/css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9cf0b47c7c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Navigation Bar-->
-    <div th:replace="fragments/reusable-components :: navbar"></div>
+    <div th:replace="fragments/reusable-components :: navbar" class="nav">
+    <ul>
+        <li><h1>Hobby Collection</h1></li>        
+        <li><input type="text" class="form-control" id="" placeholder="Enter a collection or tag..." required></li>
+    </ul>
+    </div>
     <!-- Collection Section-->
     <div class="container main-div">
         <div class="row row-cols-auto">
-            <h2>Collections</h2>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCollectionModal">Add Collection</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCollectionModal"><i class="far fa-plus-square"></i></button>
+            <h4>Add a Collection Above...</h4>
         </div>
         <div class="row row-cols-auto">
             <div class="col">
@@ -31,24 +37,28 @@
     <div class="collection-div">
         <div class="container item-div">
             <div class="row row-cols-auto">
-                <h2>Browse Collection</h2>
+                <h2>Browse Your Collections</h2>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addItemModal">Add Item</button>
             </div>
                 <div class="row row-cols-auto">
                 <div class="col">
                     <div th:replace="fragments/reusable-components :: itemcard">
+                        <label>Collection 1</label>
                     </div>
                 </div>
                 <div class="col">
                     <div th:replace="fragments/reusable-components :: itemcard">
+                        <label>Collection 2</label>
                     </div>
                 </div>
                 <div class="col">
                     <div th:replace="fragments/reusable-components :: itemcard">
+                        <label>Collection 3</label>
                     </div>
                 </div>
                 <div class="col">
                     <div th:replace="fragments/reusable-components :: itemcard">
+                        <label>Collection 4</label>
                     </div>
                 </div>
             </div>
