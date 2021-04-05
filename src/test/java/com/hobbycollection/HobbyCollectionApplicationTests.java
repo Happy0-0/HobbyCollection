@@ -4,6 +4,7 @@ import com.hobbycollection.dao.ICollectionDAO;
 import com.hobbycollection.dao.ICollectionItemDAO;
 import com.hobbycollection.dto.Collection;
 import com.hobbycollection.dto.CollectionItem;
+import com.hobbycollection.service.CollectionService;
 import com.hobbycollection.service.ICollectionService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -74,6 +75,11 @@ class HobbyCollectionApplicationTests {
 
         collection.setImageURL(imageUrl);
         assertEquals(imageUrl, collection.getImageURL());
+    }
+
+    private void givenCollectionDataIsAvailable() throws Exception {
+        Mockito.when(collectionDAO.save(collection)).thenReturn(collection);
+        collectionService = new CollectionService(collectionDAO);
     }
 
 }
