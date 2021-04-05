@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 
-@Repository("collectionDAO")
+@Repository("CollectionDAOStub")
 public class CollectionSQLDAO implements ICollectionDAO{
 
     @Autowired
@@ -18,7 +18,7 @@ public class CollectionSQLDAO implements ICollectionDAO{
     }
 
     @Override
-    public Collection getItemByID(int id) {
+    public Collection getCollectionByID(int id) {
         return null;
     }
 
