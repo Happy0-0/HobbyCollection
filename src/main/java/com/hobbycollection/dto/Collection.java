@@ -26,4 +26,8 @@ class Collection {
         this.imageURL = imageURL;
         this.description = description;
     }
+
+    public Object fetch(int i) {
+        return null;
+    }
 }

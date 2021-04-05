@@ -82,4 +82,11 @@ class HobbyCollectionApplicationTests {
         collectionService = new CollectionService(collectionDAO);
     }
 
+    private void whenCollection1IsAdded() {
+        Collection newCollection = new Collection();
+        collection.setName("My Collection");
+        collection.setDescription("A Funko Pop Collection");
+        Mockito.when(collection.fetch(1)).thenReturn(collection);
+    }
+
 }
