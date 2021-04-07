@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="addCollectionModal">
+        <div class="modal fade" id="addCollectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Create a Collection</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="custom-file">
+                            <form>
+                                <div class="form-group">
+                                    <label for="formCollectionName">Name</label>
+                                    <input type="text" class="form-control" id="formCollectionName" placeholder="Enter a Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formCollectionDescription">Description</label>
+                                    <input type="text" class="form-control" id="formCollectionDescription" placeholder="Enter a Description">
+                                </div>
+                                <div class="custom-file">
+                                    <label class="custom-file-label" for="customCollectionFile">Choose a Picture</label><br>
+                                    <input type="file" class="custom-file-input" id="customCollectionFile">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:fragment="addItemModal">
+        <div class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addItemModalTitle">Add a new Item</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="custom-file">
+                            <form>
+                                <div class="form-group">
+                                    <label for="formItemName">Name</label>
+                                    <input type="text" class="form-control" id="formItemName" placeholder="Enter a Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formItemDescription">Description</label>
+                                    <input type="text" class="form-control" id="formItemDescription" placeholder="Enter a Description">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formItemTag">Tags</label>
+                                    <input type="text" class="form-control" id="formItemTag" placeholder="Enter Tags">
+                                </div>
+                                <div class="custom-file">
+                                    <label class="custom-file-label" for="customItemFile">Choose a Picture</label><br>
+                                    <input type="file" class="custom-file-input" id="customItemFile">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:fragment="editItemModal">
+        <div class="modal fade" id="editItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editItemModalTitle">Edit Item</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="custom-file">
+                            <img class="rounded" src="https://s3.drafthouse.com/ui/sidebar-placeholder-blank.png" alt="placeholder image">
+                            <form>
+                                <div class="form-group">
+                                    <label for="formCollectionName">Name</label>
+                                    <input type="text" class="form-control" id="formEditItemName" placeholder="Enter a Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formCollectionDescription">Description</label>
+                                    <input type="text" class="form-control" id="formEditItemDescription" placeholder="Enter a Description">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formCollectionDescription">Tags</label>
+                                    <input type="text" class="form-control" id="formEditItemTags" placeholder="Enter Tags">
+                                </div>
+                                <div class="custom-file">
+                                    <label class="custom-file-label" for="customFile">Choose a Picture</label><br>
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
