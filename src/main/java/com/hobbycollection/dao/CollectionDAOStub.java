@@ -29,7 +29,7 @@ public class CollectionDAOStub implements ICollectionDAO{
     public ArrayList<Collection> fetchCollectionByName(String name) { return new ArrayList<>(); }
 
     @Override
-    public Collection getItemByID(int id) {
+    public Collection getCollectionByID(int id) {
 
         return allCollections.get(id);
     }
