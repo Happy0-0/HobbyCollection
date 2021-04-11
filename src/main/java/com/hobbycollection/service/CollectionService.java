@@ -7,6 +7,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -45,4 +46,8 @@ public class CollectionService implements ICollectionService{
     public List<Collection> fetchAll() {
         return collectionDAO.fetchAll();
     }
+
+    @Override
+    @Cacheable(value="collection", key="name")
+    public ArrayList<Collection> fetchCollectionByName(String name) { return collectionDAO.fetchCollectionByName(name); }
 }
