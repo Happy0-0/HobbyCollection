@@ -5,6 +5,9 @@ import com.hobbycollection.service.ICollectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class HobbyCollectionRESTController {
     @Autowired
@@ -31,6 +34,20 @@ public class HobbyCollectionRESTController {
             return collectionService.save(collection);
         } catch (Exception e){
             return e.getMessage();
+        }
+    }
+
+    /**
+     * Retrieves a JSON list of matched collections after searching by term
+     * @param searchTerm
+     * @return ArrayList of results that contain that search term in their name
+     */
+    @GetMapping("/api/Collection/searchByTerm")
+    public ArrayList<Collection> collectionsSearchByTerm(@RequestParam(value="searchTerm") String searchTerm){
+        try {
+            return collectionService.fetchCollectionByName(searchTerm);
+        } catch (Exception e) {
+            return null;
         }
     }
 }
