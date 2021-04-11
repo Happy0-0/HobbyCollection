@@ -3,7 +3,7 @@
     <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">Hobby Collection</a>
-            <form class="d-flex" action="#" th:action="@{/collections}" method="GET">
+            <form class="d-flex" action="#" th:action="@{/api/Collection/searchByTerm}" method="GET">
                 <input id="searchBtn" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchTerm">
                 <button class="btn btn-success" type="submit">Search</button>
             </form>
