@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository("collectionDAO")
+@Repository("CollectionDAOStub")
 public class CollectionSQLDAO implements ICollectionDAO{
 
     @Autowired
@@ -21,12 +21,14 @@ public class CollectionSQLDAO implements ICollectionDAO{
     }
 
     @Override
+
     public ArrayList<Collection> fetchCollectionByName(String name) {
             return collectionRepository.findByCollectionNameContainingIgnoreCase(name);
         }
 
-    @Override
-    public Collection getItemByID(int id) {
+
+    public Collection getCollectionByID(int id) {
+
         return null;
     }
 

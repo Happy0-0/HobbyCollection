@@ -27,7 +27,7 @@ public class CollectionService implements ICollectionService{
     @Override
     @Cacheable(value="collection", key="#id")
     public Collection fetchById(int id) {
-        return collectionDAO.getItemByID(id);
+        return collectionDAO.getCollectionByID(id);
     }
 
     @Override

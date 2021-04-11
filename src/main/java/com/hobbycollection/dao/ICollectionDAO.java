@@ -8,7 +8,9 @@ public interface ICollectionDAO {
 
     ArrayList<Collection> fetchAll();
     ArrayList<Collection> fetchCollectionByName(String name);
-    Collection getItemByID(int id);
+
+    Collection getCollectionByID(int id);
+
     Collection save(Collection collection) throws Exception;
     void delete(int id) throws Exception;
 }
