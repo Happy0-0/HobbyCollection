@@ -1,7 +1,6 @@
 package com.hobbycollection.dao;
 
 import com.hobbycollection.dto.Photo;
-import com.hobbycollection.service.ICollectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;

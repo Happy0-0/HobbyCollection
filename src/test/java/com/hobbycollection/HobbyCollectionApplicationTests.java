@@ -62,7 +62,7 @@ class HobbyCollectionApplicationTests {
     void verifyCollectionProperties() {
         String name =  "My Collection";
         String description = "A Funko Pop Collection";
-        String imageUrl = "https://mercari-images.global.ssl.fastly.net/photos/m22837971150_1.jpg?1585004637";
+        //String imageUrl = "https://mercari-images.global.ssl.fastly.net/photos/m22837971150_1.jpg?1585004637";
 
         Collection collection = new Collection();
         collection.setCollectionName(name);
@@ -71,8 +71,8 @@ class HobbyCollectionApplicationTests {
         collection.setDescription(description);
         assertEquals(description, collection.getDescription());
 
-        collection.setImageURL(imageUrl);
-        assertEquals(imageUrl, collection.getImageURL());
+        //collection.setImageURL(imageUrl);
+        //assertEquals(imageUrl, collection.getImageURL());
     }
 
 }

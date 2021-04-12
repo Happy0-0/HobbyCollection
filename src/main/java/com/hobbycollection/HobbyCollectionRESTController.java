@@ -28,7 +28,7 @@ public class HobbyCollectionRESTController {
     public Object collectionFetchById(@RequestParam(value="id") int id){
         try{
             log.info("Collection with ID of " + id + " has been fetched.");
-            return new Collection("test name", "http://some.url","test description");
+            return new Collection("test name", "test description");
         }
         catch (Exception e){
             log.error("There was en error finding your collection with ID: " + id);
@@ -75,14 +75,16 @@ public class HobbyCollectionRESTController {
         try {
             photo.setFileName(imageURL.getOriginalFilename());
             collectionService.saveImage(imageURL, photo);
-            model.addObject("collection", collection);
             modelAndView.setViewName("success");
+            model.addObject("collection", collection);
         }
         catch (Exception e){
             log.error("Unable to save photo: " + e.getMessage());
             modelAndView.setViewName("error");
             return modelAndView;
         }
+        modelAndView.addObject("photo", photo);
+        modelAndView.addObject("collection", collection);
         return modelAndView;
     }
 

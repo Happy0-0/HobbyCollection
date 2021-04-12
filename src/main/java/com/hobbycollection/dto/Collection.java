@@ -9,7 +9,6 @@ import java.io.Serializable;
 public @Data
 class Collection implements Serializable {
     private String collectionName;
-    private String imageURL;
     private String description;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,9 +18,8 @@ class Collection implements Serializable {
 
     }
 
-    public Collection(String collectionName, String imageURL, String description){
+    public Collection(String collectionName, String description){
         this.collectionName = collectionName;
-        this.imageURL = imageURL;
         this.description = description;
     }
 }
