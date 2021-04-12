@@ -45,5 +45,11 @@ public interface ICollectionService {
      */
     ArrayList<Collection> fetchCollectionByName(String searchCollectionTerm);
 
+    /**
+     * Saves an image
+     * @param imageURL
+     * @param photo
+     * @throws IOException
+     */
     void saveImage(MultipartFile imageURL, Photo photo) throws IOException;
 }

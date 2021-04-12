@@ -77,6 +77,7 @@ public class HobbyCollectionRESTController {
             collectionService.saveImage(imageURL, photo);
             modelAndView.setViewName("success");
             model.addObject("collection", collection);
+            log.info("Photo was saved successfully: " + imageURL.getOriginalFilename());
         }
         catch (Exception e){
             log.error("Unable to save photo: " + e.getMessage());
