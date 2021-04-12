@@ -1,12 +1,16 @@
 package com.hobbycollection.service;
 
 import com.hobbycollection.dao.ICollectionDAO;
+import com.hobbycollection.dao.IPhotoDAO;
 import com.hobbycollection.dto.Collection;
+import com.hobbycollection.dto.Photo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +19,9 @@ public class CollectionService implements ICollectionService{
 
     @Autowired
     private ICollectionDAO collectionDAO;
+
+    @Autowired
+    private IPhotoDAO photoDAO;
 
     public CollectionService() {
 
@@ -50,4 +57,11 @@ public class CollectionService implements ICollectionService{
     @Override
     @Cacheable(value="collection", key="name")
     public ArrayList<Collection> fetchCollectionByName(String name) { return collectionDAO.fetchCollectionByName(name); }
+
+    @Override
+    public void saveImage(MultipartFile imageURL, Photo photo) throws IOException {
+        photoDAO.save(photo);
+        photoDAO.saveImage(imageURL, photo);
+
+    }
 }

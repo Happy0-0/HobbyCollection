@@ -1,7 +1,10 @@
 package com.hobbycollection.service;
 
 import com.hobbycollection.dto.Collection;
+import com.hobbycollection.dto.Photo;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,4 +44,6 @@ public interface ICollectionService {
      * @return List<Collection>
      */
     ArrayList<Collection> fetchCollectionByName(String searchCollectionTerm);
+
+    void saveImage(MultipartFile imageURL, Photo photo) throws IOException;
 }

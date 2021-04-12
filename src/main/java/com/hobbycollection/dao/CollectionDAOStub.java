@@ -21,13 +21,20 @@ public class CollectionDAOStub implements ICollectionDAO{
     }
 
     /**
-     * Get an distinct collection in the database.
+     * Gets a distinct collection in the database.
+     * @param name
+     * @return Collection object of corresponding name
+     */
+    @Override
+    public ArrayList<Collection> fetchCollectionByName(String name) {
+        return new ArrayList<>();
+    }
+
+    /**
+     * Get a distinct collection in the database.
      * @param id unique integer that belongs to a collection
      * @return Collection object of corresponding id
      */
-    @Override
-    public ArrayList<Collection> fetchCollectionByName(String name) { return new ArrayList<>(); }
-
     @Override
     public Collection getCollectionByID(int id) {
 
