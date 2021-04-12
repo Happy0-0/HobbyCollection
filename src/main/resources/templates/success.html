@@ -24,7 +24,7 @@
     <div class="row row-cols-auto">
         <div class="list-group" th:action="@{/api/Collection/fetchAll}" method="GET">
             <div class="col">
-                <div th:replace="fragments/reusable-components :: viewcollectioncard">
+                <div th:insert="fragments/reusable-components :: viewcollectioncard">
                 </div>
             </div>
         </div>
