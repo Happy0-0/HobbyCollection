@@ -21,8 +21,8 @@
             <h2>Collections</h2>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCollectionModal">Add Collection</button>
         </div>
-        <div class="row row-cols-auto">
-            <div class="list-group" th:action="@{/api/Collection/fetchAll}" method="GET">
+        <div class="row row-cols-auto" th:action="@{/api/Collection/fetchAll}" method="GET">
+            <div class="list-group" th:each="collection : ${collections}">
                 <div class="col">
                     <div th:insert="fragments/reusable-components :: viewcollectioncard">
                     </div>

@@ -6,7 +6,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name="photos")
+@Table(name= "photos")
 public @Data class Photo {
 
     @Id

@@ -62,7 +62,6 @@ public class HobbyCollectionRESTController {
     public ModelAndView collectionSave(Collection collection, @RequestParam("imageURL") MultipartFile imageURL, ModelAndView model) {
         ModelAndView modelAndView = new ModelAndView();
         try{
-            //return collectionService.saveCollection(imageURL, description, collectionName);
             log.info("Collection with ID of " + collection.getID() + " has been saved.");
             collectionService.save(collection);
         } catch (Exception e){
@@ -74,6 +73,7 @@ public class HobbyCollectionRESTController {
         Photo photo = new Photo();
         try {
             photo.setFileName(imageURL.getOriginalFilename());
+            photo.setCollection(collection);
             collectionService.saveImage(imageURL, photo);
             modelAndView.setViewName("success");
             model.addObject("collection", collection);

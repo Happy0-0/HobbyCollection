@@ -22,4 +22,7 @@ class Collection implements Serializable {
         this.collectionName = collectionName;
         this.description = description;
     }
+
+    @OneToOne(mappedBy = "collection")
+    private Photo photo;
 }
