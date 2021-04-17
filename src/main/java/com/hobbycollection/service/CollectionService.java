@@ -1,8 +1,10 @@
 package com.hobbycollection.service;
 
 import com.hobbycollection.dao.ICollectionDAO;
+import com.hobbycollection.dao.ICollectionItemDAO;
 import com.hobbycollection.dao.IPhotoDAO;
 import com.hobbycollection.dto.Collection;
+import com.hobbycollection.dto.CollectionItem;
 import com.hobbycollection.dto.Photo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;

@@ -1,7 +1,9 @@
 package com.hobbycollection;
 
 import com.hobbycollection.dto.Collection;
+import com.hobbycollection.dto.CollectionItem;
 import com.hobbycollection.dto.Photo;
+import com.hobbycollection.service.ICollectionItemService;
 import com.hobbycollection.service.ICollectionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +19,10 @@ import java.util.List;
 public class HobbyCollectionRESTController {
     @Autowired
     private ICollectionService collectionService;
+
+    @Autowired
+    private ICollectionItemService collectionItemService;
+
     Logger log = LoggerFactory.getLogger(this.getClass());
 
     /**
@@ -52,12 +58,12 @@ public class HobbyCollectionRESTController {
             return e.getMessage();
         }
     }
+
     /**
      * Saves a collection to the database
      * @param collection Collection DTO object
      * @return on success, the saved Collection DTO object.  On Failure, return null
      */
-
     @PostMapping("/api/Collection/save")
     public ModelAndView collectionSave(Collection collection, @RequestParam("imageURL") MultipartFile imageURL, ModelAndView model) {
         ModelAndView modelAndView = new ModelAndView();
@@ -115,5 +121,41 @@ public class HobbyCollectionRESTController {
         catch (Exception e) {
             return null;
         }
+    }
+
+    /**
+     * Saves a collection to the database
+     * @param collectionItem CollectionItem DTO object
+     * @return on success, the saved Collection DTO object.  On Failure, return null
+     */
+    @PostMapping("/api/CollectionItem/save")
+    public ModelAndView collectionItemSave(CollectionItem collectionItem, @RequestParam("imageURL") MultipartFile imageURL, ModelAndView model) {
+        ModelAndView modelAndView = new ModelAndView();
+        try{
+            log.info("CollectionItem with ID of " + collectionItem.getID() + " has been saved.");
+            collectionItemService.save(collectionItem);
+        } catch (Exception e){
+            log.error("CollectionItem with ID of " + collectionItem.getID() + " had an error on save: " + e.getMessage());
+            modelAndView.setViewName("error");
+            return modelAndView;
+        }
+
+        Photo photo = new Photo();
+        try {
+            photo.setFileName(imageURL.getOriginalFilename());
+            photo.setCollectionItem(collectionItem);
+            collectionItemService.saveImage(imageURL, photo);
+            modelAndView.setViewName("success");
+            model.addObject("collectionItem", collectionItem);
+            log.info("Photo was saved successfully: " + imageURL.getOriginalFilename());
+        }
+        catch (Exception e){
+            log.error("Unable to save photo: " + e.getMessage());
+            modelAndView.setViewName("error");
+            return modelAndView;
+        }
+        modelAndView.addObject("photo", photo);
+        modelAndView.addObject("collectionItem", collectionItem);
+        return modelAndView;
     }
 }
