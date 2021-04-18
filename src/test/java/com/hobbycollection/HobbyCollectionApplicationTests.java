@@ -77,6 +77,14 @@ class HobbyCollectionApplicationTests {
         assertEquals(imageUrl, collection.getImageURL());
     }
 
+    @Test
+    void fetchCollectionById_returnsFunkoPopCollectionForID1() throws Exception {
+        givenCollectionDataIsAvailable();
+        whenCollection1IsAdded();
+        whenSearchCollectionWithID1();
+        thenReturnFunkoPopCollectionForID1();
+    }
+
     private void givenCollectionDataIsAvailable() throws Exception {
         Mockito.when(collectionDAO.save(collection)).thenReturn(collection);
         collectionService = new CollectionService(collectionDAO);
@@ -86,7 +94,16 @@ class HobbyCollectionApplicationTests {
         Collection newCollection = new Collection();
         collection.setName("My Collection");
         collection.setDescription("A Funko Pop Collection");
-        Mockito.when(collection.fetch(1)).thenReturn(collection);
+        Mockito.when(collectionDAO.getCollectionByID(1)).thenReturn(collection);
+    }
+
+    private void whenSearchCollectionWithID1() {
+        collection = collectionService.fetchById(1);
+    }
+
+    private void thenReturnFunkoPopCollectionForID1() {
+        String description = collection.getDescription();
+        assertEquals("A Funko Pop Collection", description);
     }
 
 }
