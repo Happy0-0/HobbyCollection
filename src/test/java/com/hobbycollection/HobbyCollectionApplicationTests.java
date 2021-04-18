@@ -51,8 +51,8 @@ class HobbyCollectionApplicationTests {
         collectionItem.setTags(tag);
         assertEquals(tag, collectionItem.getTags());
 
-        collectionItem.setImageURL(imageUrl);
-        assertEquals(imageUrl, collectionItem.getImageURL());
+//        collectionItem.setImageURL(imageUrl);
+//        assertEquals(imageUrl, collectionItem.getImageURL());
     }
 
     /**

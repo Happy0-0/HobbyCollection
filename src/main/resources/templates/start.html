@@ -37,24 +37,13 @@
                 <h2>Browse Collection</h2>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addItemModal">Add Item</button>
             </div>
-                <div class="row row-cols-auto">
-                <div class="col">
-                    <div th:replace="fragments/reusable-components :: itemcard">
-                    </div>
+                <div class="row row-cols-auto" th:action="@{/api/CollectionItem/fetchAll}" method="GET">
+                    <div class="list-group" th:each="collectionItem : ${collectionItems}"></div>
+                        <div class="col">
+                            <div th:insert="fragments/reusable-components :: itemcard">
+                            </div>
+                        </div>
                 </div>
-                <div class="col">
-                    <div th:replace="fragments/reusable-components :: itemcard">
-                    </div>
-                </div>
-                <div class="col">
-                    <div th:replace="fragments/reusable-components :: itemcard">
-                    </div>
-                </div>
-                <div class="col">
-                    <div th:replace="fragments/reusable-components :: itemcard">
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- Add Collection Card Modal Section -->

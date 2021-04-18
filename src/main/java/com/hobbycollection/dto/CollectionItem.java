@@ -10,7 +10,6 @@ import lombok.Setter;
 public class CollectionItem {
     private String name;
     private String tags;
-    private String imageURL;
     private String description;
     private int ID;
 
