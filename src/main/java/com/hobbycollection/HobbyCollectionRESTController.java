@@ -39,7 +39,6 @@ public class HobbyCollectionRESTController {
      * @param collection Collection DTO object
      * @return on success, the saved Collection DTO object.  On Failure, return null
      */
-
     @PostMapping("/api/Collection/save")
     public Object collectionSave(@RequestBody Collection collection){
         try{
@@ -78,6 +77,22 @@ public class HobbyCollectionRESTController {
         }
         catch (Exception e){
             log.error("There was en error finding your collection item with ID: " + id);
+            return e.getMessage();
+        }
+    }
+
+    /**
+     * Saves a collection item to the database
+     * @param collectionItem Collection item DTO object
+     * @return on success, the saved Collection item DTO object.  On Failure, return null
+     */
+    @PostMapping("/api/Collection/Item/save")
+    public Object collectionItemSave(@RequestBody CollectionItem collectionItem){
+        try{
+            log.info("Collection Item with ID of " + collectionItem.getID() + " has been saved.");
+            return collectionService.save(collectionItem);
+        } catch (Exception e){
+            log.error("Collection Item with ID of " + collectionItem.getID() + " had an error on save: " + e.getMessage());
             return e.getMessage();
         }
     }
