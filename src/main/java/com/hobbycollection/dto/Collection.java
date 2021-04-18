@@ -30,4 +30,7 @@ class Collection {
     public Object fetch(int i) {
         return null;
     }
+
+    public void setName(String my_collection) {
+    }
 }
