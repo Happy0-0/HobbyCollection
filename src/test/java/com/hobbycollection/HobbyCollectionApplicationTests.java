@@ -7,7 +7,6 @@ import com.hobbycollection.dto.CollectionItem;
 import com.hobbycollection.service.CollectionService;
 import com.hobbycollection.service.ICollectionService;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -67,8 +66,8 @@ class HobbyCollectionApplicationTests {
         String imageUrl = "https://mercari-images.global.ssl.fastly.net/photos/m22837971150_1.jpg?1585004637";
 
         Collection collection = new Collection();
-        collection.setName(name);
-        assertEquals(name, collection.getName());
+        collection.setCollectionName(name);
+        assertEquals(name, collection.getCollectionName());
 
         collection.setDescription(description);
         assertEquals(description, collection.getDescription());

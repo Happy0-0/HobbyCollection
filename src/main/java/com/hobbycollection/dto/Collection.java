@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 public @Data
 class Collection {
-    private String name;
+    private String collectionName;
     private String imageURL;
     private String description;
     @Id
@@ -21,8 +21,8 @@ class Collection {
 
     }
 
-    public Collection(String name, String imageURL, String description){
-        this.name = name;
+    public Collection(String collectionName, String imageURL, String description){
+        this.collectionName = collectionName;
         this.imageURL = imageURL;
         this.description = description;
     }
