@@ -32,7 +32,7 @@ public class HobbyCollectionRESTController {
             return new Collection("test name", "test description");
         }
         catch (Exception e){
-            log.error("There was en error finding your collection with ID: " + id);
+            log.error("There was an error finding your collection with ID: " + id);
             return e.getMessage();
         }
     }
@@ -49,7 +49,7 @@ public class HobbyCollectionRESTController {
             return collectionService.fetchCollectionByName(collectionName);
         }
         catch (Exception e) {
-            log.error("There was en error finding your collection with collection name: " + collectionName);
+            log.error("There was an error finding your collection with collection name: " + collectionName);
             return e.getMessage();
         }
     }
@@ -63,8 +63,8 @@ public class HobbyCollectionRESTController {
     public ModelAndView collectionSave(Collection collection, @RequestParam("imageURL") MultipartFile imageURL, ModelAndView model) {
         ModelAndView modelAndView = new ModelAndView();
         try{
-            log.info("Collection with ID of " + collection.getID() + " has been saved.");
             collectionService.save(collection);
+            log.info("Collection with ID of " + collection.getID() + " has been saved.");
         } catch (Exception e){
             log.error("Collection with ID of " + collection.getID() + " had an error on save: " + e.getMessage());
             modelAndView.setViewName("error");
@@ -118,6 +118,21 @@ public class HobbyCollectionRESTController {
         }
     }
 
+
+    /**
+     * Retrieves all of the collections
+     * @return List of collections
+     */
+    @GetMapping("/api/Collection/Item/fetchAll")
+    public List<CollectionItem> collectionItemFetchAll() {
+        try {
+            return collectionService.fetchAllItems();
+        }
+        catch (Exception e) {
+            return null;
+        }
+    }
+
     /**
      * Fetches a collection item by the id
      * @param id
@@ -127,10 +142,10 @@ public class HobbyCollectionRESTController {
     public Object collectionItemFetchById(@RequestParam(value="id") int id){
         try{
             log.info("Collection Item with ID of " + id + " has been fetched.");
-            return new CollectionItem("test name", "test tags", "test description",id);
+            return new CollectionItem("test name", "test tags", "test description");
         }
         catch (Exception e){
-            log.error("There was en error finding your collection item with ID: " + id);
+            log.error("There was an error finding your collection item with ID: " + id);
             return e.getMessage();
         }
     }
@@ -141,13 +156,33 @@ public class HobbyCollectionRESTController {
      * @return on success, the saved Collection item DTO object.  On Failure, return null
      */
     @PostMapping("/api/Collection/Item/save")
-    public Object collectionItemSave(@RequestBody CollectionItem collectionItem){
+    public ModelAndView collectionItemSave(CollectionItem collectionItem, @RequestParam("imageURL") MultipartFile imageURL, ModelAndView model){
+        ModelAndView modelAndView = new ModelAndView();
         try{
+            collectionService.save(collectionItem);
             log.info("Collection Item with ID of " + collectionItem.getID() + " has been saved.");
-            return collectionService.save(collectionItem);
         } catch (Exception e){
             log.error("Collection Item with ID of " + collectionItem.getID() + " had an error on save: " + e.getMessage());
-            return e.getMessage();
+            modelAndView.setViewName("error");
+            return modelAndView;
         }
+
+        Photo photo = new Photo();
+        try {
+            photo.setFileName(imageURL.getOriginalFilename());
+            photo.setCollectionItem(collectionItem);
+            collectionService.saveImage(imageURL, photo);
+            modelAndView.setViewName("success");
+            model.addObject("collectionItem", collectionItem);
+            log.info("Photo was saved successfully: " + imageURL.getOriginalFilename());
+        }
+        catch (Exception e){
+            log.error("Unable to save photo: " + e.getMessage());
+            modelAndView.setViewName("error");
+            return modelAndView;
+        }
+        modelAndView.addObject("photo", photo);
+        modelAndView.addObject("collectionItem", collectionItem);
+        return modelAndView;
     }
 }

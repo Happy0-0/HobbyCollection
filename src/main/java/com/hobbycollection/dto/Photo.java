@@ -19,4 +19,9 @@ public @Data class Photo {
     @OneToOne
     @JoinColumn(name="collection_id")
     private Collection collection;
+
+    @ToString.Exclude
+    @OneToOne
+    @JoinColumn(name="collectionItem_id")
+    private CollectionItem collectionItem;
 }

@@ -19,6 +19,7 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
+<body>
 <!-- Navigation Bar-->
 <div th:replace="fragments/reusable-components :: navbar"></div>
 <!-- Collection Section-->
@@ -27,8 +28,8 @@
         <h2>Collections</h2>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCollectionModal">Add Collection</button>
     </div>
-    <div class="row row-cols-auto" th:each="collection : ${collections}">
-        <div class="list-group">
+    <div class="row row-cols-auto" th:action="@{/api/Collection/fetchAll}" method="GET">
+        <div class="list-group" th:each="collection : ${collections}">
             <div class="col">
                 <div th:insert="fragments/reusable-components :: viewcollectioncard">
                 </div>
@@ -78,7 +79,7 @@
                             <input type="file" class="custom-file-input" id="customCollectionFile" name="imageURL" field="*{imageURL}">
                         </div><br>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button name="submit" type="submit" class="btn btn-primary" value="0">Save changes</button>
+                        <button name="submit" type="submit" class="btn btn-primary" value="0">Submit</button>
                     </form>
                 </div>
             </div>
@@ -97,29 +98,27 @@
             </div>
             <div class="modal-body">
                 <div class="custom-file">
-                    <form>
+                    <form action="#" enctype="multipart/form-data" th:action="@{/api/Collection/Item/save}" th:object="${collectionItem}" method="POST">
                         <div class="form-group">
                             <label for="formItemName">Name</label>
-                            <input type="text" class="form-control" id="formItemName" placeholder="Enter a Name">
+                            <input type="text" class="form-control" id="formItemName" placeholder="Enter a Name" name="name" field="*{name}">
                         </div>
                         <div class="form-group">
                             <label for="formItemDescription">Description</label>
-                            <input type="text" class="form-control" id="formItemDescription" placeholder="Enter a Description">
+                            <input type="text" class="form-control" id="formItemDescription" placeholder="Enter a Description" name="description" field="*{description}">
                         </div>
                         <div class="form-group">
                             <label for="formItemTag">Tags</label>
-                            <input type="text" class="form-control" id="formItemTag" placeholder="Enter Tags">
+                            <input type="text" class="form-control" id="formItemTag" placeholder="Enter Tags"  name="tags" field="*{tags}">
                         </div>
                         <div class="custom-file">
                             <label class="custom-file-label" for="customItemFile">Choose a Picture</label><br>
-                            <input type="file" class="custom-file-input" id="customItemFile">
-                        </div>
+                            <input type="file" class="custom-file-input" id="customItemFile" name="imageURL" field="*{imageURL}">
+                        </div><br>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button name="submit" type="submit"  class="btn btn-primary" value="0">Save changes</button>
                     </form>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
