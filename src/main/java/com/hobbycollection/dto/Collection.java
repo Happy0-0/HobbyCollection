@@ -26,4 +26,7 @@ class Collection {
         this.imageURL = imageURL;
         this.description = description;
     }
+
+    public void setName(String my_collection) {
+    }
 }
