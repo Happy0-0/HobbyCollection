@@ -13,7 +13,7 @@
 
 <div th:fragment="viewcollectioncard">
     <div class="card" style="width: 18rem;border-style: solid;border-width: medium;border-color: grey;" th:object="${collection}">
-        <img th:src="@{${'/photos/' + photo.fileName}}" class="card-img-top" alt="Collection Image">
+        <img th:href="@{${photo.path} + ${photo.fileName}}" class="card-img-top" alt="Collection Image"/>
         <div class="card-body text-dark">
             <h5 class="card-title" th:text="${collection.collectionName}">Collection title</h5>
             <p class="card-text" th:text="${collection.description}">Sample text for the collection description</p>
