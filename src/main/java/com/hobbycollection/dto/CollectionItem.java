@@ -35,4 +35,7 @@ public @Data class CollectionItem {
     @ManyToOne
     @JoinColumn(name="collection_id")
     private Collection collection;
+
+    @OneToOne(mappedBy = "collectionItem")
+    private Photo photo;
 }

@@ -120,8 +120,8 @@ public class HobbyCollectionRESTController {
 
 
     /**
-     * Retrieves all of the collections
-     * @return List of collections
+     * Retrieves all of the collectionItems
+     * @return List of collectionItems
      */
     @GetMapping("/api/Collection/Item/fetchAll")
     public List<CollectionItem> collectionItemFetchAll() {
