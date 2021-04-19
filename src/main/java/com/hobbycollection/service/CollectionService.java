@@ -1,8 +1,10 @@
 package com.hobbycollection.service;
 
 import com.hobbycollection.dao.ICollectionDAO;
+import com.hobbycollection.dao.ICollectionItemDAO;
 import com.hobbycollection.dao.IPhotoDAO;
 import com.hobbycollection.dto.Collection;
+import com.hobbycollection.dto.CollectionItem;
 import com.hobbycollection.dto.Photo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -19,6 +21,7 @@ public class CollectionService implements ICollectionService{
 
     @Autowired
     private ICollectionDAO collectionDAO;
+    private ICollectionItemDAO collectionItemDAO;
 
     @Autowired
     private IPhotoDAO photoDAO;
@@ -46,6 +49,11 @@ public class CollectionService implements ICollectionService{
     @Override
     public Collection save(Collection collection) throws Exception {
         return collectionDAO.save(collection);
+    }
+
+    @Override
+    public CollectionItem save(CollectionItem collectionItem) throws Exception {
+        return collectionItemDAO.save(collectionItem);
     }
 
     @Override

@@ -22,6 +22,9 @@ class Collection {
         this.description = description;
     }
 
+    public void setName(String my_collection) {
+    }
+
     @OneToOne(mappedBy = "collection")
     private Photo photo;
 }

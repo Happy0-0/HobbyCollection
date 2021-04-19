@@ -16,4 +16,10 @@ public class CollectionItem {
     public CollectionItem() {
 
     }
+
+    public CollectionItem(String name, String tags, String description) {
+        this.name = name;
+        this.tags = tags;
+        this.description = description;
+    }
 }
