@@ -10,18 +10,10 @@ import lombok.Setter;
 public class CollectionItem {
     private String name;
     private String tags;
-    private String imageURL;
     private String description;
     private int ID;
 
-    public CollectionItem(){
+    public CollectionItem() {
 
-    }
-
-    public CollectionItem(String name, String tags, String imageURL, String description) {
-        this.name = name;
-        this.tags = tags;
-        this.imageURL = imageURL;
-        this.description = description;
     }
 }
