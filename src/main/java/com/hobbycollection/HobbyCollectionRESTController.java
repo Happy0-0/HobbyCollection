@@ -2,7 +2,6 @@ package com.hobbycollection;
 
 import com.hobbycollection.dto.Collection;
 import com.hobbycollection.dto.Photo;
-import com.hobbycollection.dto.CollectionItem;
 import com.hobbycollection.service.ICollectionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,6 +57,7 @@ public class HobbyCollectionRESTController {
      * @param collection Collection DTO object
      * @return on success, the saved Collection DTO object.  On Failure, return null
      */
+
     @PostMapping("/api/Collection/save")
     public ModelAndView collectionSave(Collection collection, @RequestParam("imageURL") MultipartFile imageURL, ModelAndView model) {
         ModelAndView modelAndView = new ModelAndView();
@@ -104,7 +104,6 @@ public class HobbyCollectionRESTController {
     }
 
     /**
-
      * Retrieves all of the collections
      * @return List of collections
      */
@@ -115,38 +114,6 @@ public class HobbyCollectionRESTController {
         }
         catch (Exception e) {
             return null;
-        }
-    }
-
-     * Fetches a collection item by the id
-     * @param id
-     * @return URL
-     */
-    @GetMapping("/api/Collection/Item/fetchByid")
-    public Object collectionItemFetchById(@RequestParam(value="id") int id){
-        try{
-            log.info("Collection Item with ID of " + id + " has been fetched.");
-            return new CollectionItem("test name", "test tags", "http://some.url","test description");
-        }
-        catch (Exception e){
-            log.error("There was en error finding your collection item with ID: " + id);
-            return e.getMessage();
-        }
-    }
-
-    /**
-     * Saves a collection item to the database
-     * @param collectionItem Collection item DTO object
-     * @return on success, the saved Collection item DTO object.  On Failure, return null
-     */
-    @PostMapping("/api/Collection/Item/save")
-    public Object collectionItemSave(@RequestBody CollectionItem collectionItem){
-        try{
-            log.info("Collection Item with ID of " + collectionItem.getID() + " has been saved.");
-            return collectionService.save(collectionItem);
-        } catch (Exception e){
-            log.error("Collection Item with ID of " + collectionItem.getID() + " had an error on save: " + e.getMessage());
-            return e.getMessage();
         }
     }
 }

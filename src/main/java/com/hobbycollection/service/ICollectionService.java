@@ -3,8 +3,6 @@ package com.hobbycollection.service;
 import com.hobbycollection.dto.Collection;
 import com.hobbycollection.dto.Photo;
 import org.springframework.web.multipart.MultipartFile;
-import com.hobbycollection.dto.CollectionItem;
-
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,14 +32,6 @@ public interface ICollectionService {
      * @throws Exception if an error occurs
      */
     Collection save(Collection collection) throws Exception;
-
-    /**
-     * Saves a collection Item to the database
-     * @param collectionItem instance of Collection
-     * @return Collection Item that was saved
-     * @throws Exception if an error occurs
-     */
-    CollectionItem save(CollectionItem collectionItem) throws Exception;
 
     /**
      * Retrieves all of the collections

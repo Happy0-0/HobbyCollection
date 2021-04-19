@@ -4,10 +4,8 @@ import com.hobbycollection.dao.ICollectionDAO;
 import com.hobbycollection.dao.ICollectionItemDAO;
 import com.hobbycollection.dto.Collection;
 import com.hobbycollection.dto.CollectionItem;
-import com.hobbycollection.service.CollectionService;
 import com.hobbycollection.service.ICollectionService;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -67,35 +65,6 @@ class HobbyCollectionApplicationTests {
 
         collection.setDescription(description);
         assertEquals(description, collection.getDescription());
-    }
-
-    @Test
-    void fetchCollectionById_returnsFunkoPopCollectionForID1() throws Exception {
-        givenCollectionDataIsAvailable();
-        whenCollection1IsAdded();
-        whenSearchCollectionWithID1();
-        thenReturnFunkoPopCollectionForID1();
-    }
-
-    private void givenCollectionDataIsAvailable() throws Exception {
-        Mockito.when(collectionDAO.save(collection)).thenReturn(collection);
-        collectionService = new CollectionService(collectionDAO);
-    }
-
-    private void whenCollection1IsAdded() {
-        Collection newCollection = new Collection();
-        collection.setName("My Collection");
-        collection.setDescription("A Funko Pop Collection");
-        Mockito.when(collectionDAO.getCollectionByID(1)).thenReturn(collection);
-    }
-
-    private void whenSearchCollectionWithID1() {
-        collection = collectionService.fetchById(1);
-    }
-
-    private void thenReturnFunkoPopCollectionForID1() {
-        String description = collection.getDescription();
-        assertEquals("A Funko Pop Collection", description);
     }
 
 }
