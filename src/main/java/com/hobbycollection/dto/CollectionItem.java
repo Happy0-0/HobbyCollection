@@ -29,6 +29,7 @@ public @Data class CollectionItem {
     }
 
     public void setName(String my_collectionItem) {
+        this.name = my_collectionItem;
     }
 
     @ToString.Exclude

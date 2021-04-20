@@ -25,6 +25,7 @@ class Collection {
     }
 
     public void setName(String my_collection) {
+        this.collectionName = my_collection;
     }
 
     @ToString.Exclude
