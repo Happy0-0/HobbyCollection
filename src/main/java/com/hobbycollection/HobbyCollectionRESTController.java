@@ -7,6 +7,7 @@ import com.hobbycollection.service.ICollectionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -109,9 +110,14 @@ public class HobbyCollectionRESTController {
      * @return List of collections
      */
     @GetMapping("/api/Collection/fetchAll")
-    public List<Collection> collectionFetchAll() {
+    public List<Collection> collectionFetchAll(Model model) {
         try {
-            return collectionService.fetchAll();
+            List<Collection> collections;
+            collections = collectionService.fetchAll();
+            for (Collection collection : collections) {
+                model.addAttribute(collection);
+            }
+            return collections;
         }
         catch (Exception e) {
             return null;
