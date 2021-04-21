@@ -72,4 +72,9 @@ public class CollectionService implements ICollectionService{
         photoDAO.saveImage(imageURL, photo);
 
     }
+
+    @Override
+    public List<CollectionItem> fetchAllItems() {
+        return collectionItemDAO.fetchAll();
+    }
 }

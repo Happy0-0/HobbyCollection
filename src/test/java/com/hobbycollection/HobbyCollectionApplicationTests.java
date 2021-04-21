@@ -69,6 +69,10 @@ class HobbyCollectionApplicationTests {
         assertEquals(description, collection.getDescription());
     }
 
+    /**
+     * Fetches a collection by its ID and returns a Funko Pop Collection for the ID
+     * @throws Exception
+     */
     @Test
     void fetchCollectionById_returnsFunkoPopCollectionForID1() throws Exception {
         givenCollectionDataIsAvailable();
@@ -77,6 +81,10 @@ class HobbyCollectionApplicationTests {
         thenReturnFunkoPopCollectionForID1();
     }
 
+    /**
+     * Validates that collection data is able to be saved and returned
+     * @throws Exception
+     */
     private void givenCollectionDataIsAvailable() throws Exception {
         Mockito.when(collectionDAO.save(collection)).thenReturn(collection);
         collectionService = new CollectionService(collectionDAO);
@@ -86,15 +94,27 @@ class HobbyCollectionApplicationTests {
             Mockito.when(collectionDAO.getCollectionByID(1)).thenReturn(collection);
         }
 
-        private void whenSearchCollectionWithID1() {
-            collection = collectionService.fetchById(1);
-        }
+    /**
+     * Validates that collection data can fetch the collection by an ID
+     * @throws Exception
+     */
+    private void whenSearchCollectionWithID1() {
+        collection = collectionService.fetchById(1);
+    }
 
-        private void thenReturnFunkoPopCollectionForID1() {
-            String description = collection.getDescription();
-            assertEquals("A Funko Pop Collection", description);
-        }
+    /**
+     * Validates that collection data is returned correctly
+     * @throws Exception
+     */
+    private void thenReturnFunkoPopCollectionForID1() {
+        String description = collection.getDescription();
+        assertEquals("A Funko Pop Collection", description);
+    }
 
+    /**
+     * Validates that collection data is added to a Collection
+     * @throws Exception
+     */
     private void whenCollection1IsAdded() {
         Collection newCollection = new Collection();
         collection.setName("My Collection");

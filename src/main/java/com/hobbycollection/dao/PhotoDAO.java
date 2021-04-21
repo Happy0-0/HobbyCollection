@@ -16,12 +16,22 @@ public class PhotoDAO implements IPhotoDAO{
     @Autowired
     private PhotoRepository photoRepository;
 
+    /**
+     * Saves a photo to the photo repository
+     * @param photo
+     */
     @Override
     public void save(Photo photo) {
         photoRepository.save(photo);
     }
 
 
+    /**
+     * Saves an image to the photos folder locally and sets the path of the photo
+     * @param imageURL of the given photo from the user
+     * @param photo object
+     * @throws IOException
+     */
     @Override
     public void saveImage(MultipartFile imageURL, Photo photo) throws IOException {
         Path currentPath = Paths.get(".");

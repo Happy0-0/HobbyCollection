@@ -1,16 +1,21 @@
 package com.hobbycollection.dto;
 
-import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+
+import javax.persistence.*;
 
 @Getter
 @Setter
-@AllArgsConstructor
-public class CollectionItem {
+@Entity
+public @Data class CollectionItem {
     private String name;
     private String tags;
     private String description;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
 
     public CollectionItem() {
@@ -22,4 +27,16 @@ public class CollectionItem {
         this.tags = tags;
         this.description = description;
     }
+
+    public void setName(String my_collectionItem) {
+        this.name = my_collectionItem;
+    }
+
+    @ToString.Exclude
+    @ManyToOne
+    @JoinColumn(name="collection_id")
+    private Collection collection;
+
+    @OneToOne(mappedBy = "collectionItem")
+    private Photo photo;
 }

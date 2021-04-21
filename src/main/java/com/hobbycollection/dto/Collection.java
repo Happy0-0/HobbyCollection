@@ -1,8 +1,10 @@
 package com.hobbycollection.dto;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public @Data
@@ -23,7 +25,13 @@ class Collection {
     }
 
     public void setName(String my_collection) {
+        this.collectionName = my_collection;
     }
+
+    @ToString.Exclude
+    @OneToMany
+    @JoinColumn(name="collectionItem_id")
+    private List<CollectionItem> collectionItem;
 
     @OneToOne(mappedBy = "collection")
     private Photo photo;

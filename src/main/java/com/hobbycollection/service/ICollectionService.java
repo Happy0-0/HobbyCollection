@@ -61,4 +61,10 @@ public interface ICollectionService {
      * @throws IOException
      */
     void saveImage(MultipartFile imageURL, Photo photo) throws IOException;
+
+    /**
+     * Retrieves all of the collectionItems
+     * @return List<CollectionItem>
+     */
+    List<CollectionItem> fetchAllItems();
 }
